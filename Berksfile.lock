@@ -1,0 +1,18 @@
+DEPENDENCIES
+  dev_sandbox
+    path: .
+    metadata: true
+  td-agent
+    git: git@github.com:treasure-data/chef-td-agent.git
+    revision: e3bf3499e6c75306e26eaed2c28d9aea52a738f8
+    branch: master
+
+GRAPH
+  apt (2.6.0)
+  dev_sandbox (0.1.0)
+    apt (>= 0.0.0)
+    td-agent (>= 0.0.0)
+  td-agent (1.0.0)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
+  yum (3.5.1)

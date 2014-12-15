@@ -4,6 +4,7 @@
 # Bundler
 bin/*
 .bundle/*
-
 .kitchen/
 .kitchen.local.yml
+data_bag_key
+/cookbooks/
