@@ -19,6 +19,8 @@ end
   trash-cli
   htop
   redis-server
+  libsqlite3-dev
+  libmysqlclient-dev
 ].each do |app|
   package app do
     action :upgrade
