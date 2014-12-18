@@ -1,14 +1,18 @@
 ---
 driver:
   name: vagrant
+  customize:
+    memory: 1024
+    cpus: 2
+
 
 provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-12.04
+  - name: ubuntu-14.04
     driver:
-      box: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
+      box: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
 
 
 suites:
@@ -16,4 +20,6 @@ suites:
     run_list:
       - recipe[apt]
       - recipe[td-agent]
+      - recipe[dev_sandbox::package]
+      - recipe[dev_sandbox::anyenv_rbenv]
     attributes:
