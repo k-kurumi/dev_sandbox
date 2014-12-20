@@ -1,4 +1,5 @@
-# remove
+# install packages for development
+
 %w[
   nano
 ].each do |app|
@@ -7,7 +8,6 @@
   end
 end
 
-# install
 %w[
   build-essential
   zsh
@@ -29,8 +29,10 @@ end
 
 user  = node[:dev_sandbox][:user]
 bash "chsh_zsh" do
-  code <<-EOT
+  code <<-EOC
       chsh -s /bin/zsh #{user}
-  EOT
+  EOC
   not_if 'test "/bin/zsh" = "$(grep #{user} /etc/passwd | cut -d: -f7)"'
 end
+
+# TODO dotfilesをcloneする
