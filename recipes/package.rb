@@ -18,6 +18,7 @@ end
   ack-grep
   trash-cli
   htop
+  jq
   redis-server
   libsqlite3-dev
   libmysqlclient-dev
